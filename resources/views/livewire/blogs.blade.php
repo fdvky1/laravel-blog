@@ -11,10 +11,12 @@
                         <p class="text-2xl font-bold mb-2">{{ $post->title }}</p>
                         <div class="text-gray-800">{{ Str::limit(html_entity_decode(strip_tags($post->body)), 100) }}</div>
                     </a>
+                    @if (auth()->check())
                     <div class="flex justify-end items-center gap-4">
                         <a href="/post/delete/{{ $post->id }}" class="py-1 px-3 bg-red-500 text-white hover:bg-red-600 focus:bg-red-700 rounded-md">Delete</a>
                         <a href="/post/edit/{{ $post->id }}" class="py-1 px-3 bg-blue-500 text-white hover:bg-blue-600 focus:bg-blue-700 rounded-md">Edit</a>
                     </div>
+                    @endif
                 </li>
             @endforeach
             </ul>
