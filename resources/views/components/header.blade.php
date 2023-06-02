@@ -5,8 +5,8 @@
             <a href="/blogs" class="mr-5 hover:text-gray-900">Blogs</a>
             <a href="/about" class="mr-5 hover:text-gray-900">About</a>
             @if (auth()->check())
-            <a href="/post/create" class="mr-5 hover:text-gray-900">Create post</a>
-            <a href="/logout" class="items-center bg-gray-500 border-0 py-1 px-3 focus:outline-none hover:bg-gray-600 rounded text-base text-white">Logout</a>
+            <a href="/post/create" class="mr-5 hover:text-gray-900">Post</a>
+            <a href="/logout" class="hidden md:block items-center bg-gray-500 border-0 py-1 px-3 focus:outline-none hover:bg-gray-600 rounded text-base text-white">Logout</a>
             @else
             <a href="/login" class="items-center bg-gray-500 border-0 py-1 px-3 focus:outline-none hover:bg-gray-600 rounded text-base text-white">Login</a>
             @endif
@@ -14,5 +14,6 @@
         <a class="flex order-first lg:w-1/5 title-font font-bold items-center text-gray-900 lg:items-center lg:justify-center mb-4 md:mb-0">
             BLOG
         </a>
+        <a href="/logout" class="md:hidden mt-2 items-center bg-gray-500 border-0 py-1 px-3 focus:outline-none hover:bg-gray-600 rounded text-base text-white">Logout</a>
     </div>
 </header>
