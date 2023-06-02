@@ -18,7 +18,8 @@ Route::view('/', 'home') -> name('home');
 Route::view('/about', 'about') -> name('about');
 Route::get('/blogs', App\Http\Livewire\Blogs::class) -> name('blogs');
 Route::group(['middleware' => 'guest'], function(){
-    Route::get('login', \App\Http\Livewire\Auth\Login::class) -> name('login');
+    Route::get('/login', \App\Http\Livewire\Auth\Login::class) -> name('login');
+    Route::get('/register', \App\Http\Livewire\Auth\Register::class) -> name('register');
 });
 
 Route::group(['middleware' => 'auth'], function(){
