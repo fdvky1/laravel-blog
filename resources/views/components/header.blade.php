@@ -14,6 +14,8 @@
         <a class="flex order-first lg:w-1/5 title-font font-bold items-center text-gray-900 lg:items-center lg:justify-center mb-4 md:mb-0">
             BLOG
         </a>
+        @if (auth()->check())
         <a href="/logout" class="md:hidden mt-2 items-center bg-gray-500 border-0 py-1 px-3 focus:outline-none hover:bg-gray-600 rounded text-base text-white">Logout</a>
+        @endif
     </div>
 </header>
