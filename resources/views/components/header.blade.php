@@ -5,7 +5,9 @@
             <a href="/blogs" class="mr-5 hover:text-gray-900">Blogs</a>
             <a href="/about" class="mr-5 hover:text-gray-900">About</a>
             @if (auth()->check())
+            @if (auth()->user()->role == "admin")
             <a href="/post/create" class="mr-5 hover:text-gray-900">Create</a>
+            @endif
             <a href="/logout" class="hidden md:block items-center bg-gray-500 border-0 py-1 px-3 focus:outline-none hover:bg-gray-600 rounded text-base text-white">Logout</a>
             @else
             <a href="/login" class="items-center bg-gray-500 border-0 py-1 px-3 focus:outline-none hover:bg-gray-600 rounded text-base text-white">Login</a>

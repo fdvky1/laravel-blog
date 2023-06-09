@@ -19,17 +19,20 @@ Route::view('/about', 'about') -> name('about');
 Route::get('/blogs', App\Http\Livewire\Blogs::class) -> name('blogs');
 Route::group(['middleware' => 'guest'], function(){
     Route::get('/login', \App\Http\Livewire\Auth\Login::class) -> name('login');
-    //Route::get('/register', \App\Http\Livewire\Auth\Register::class) -> name('register');
+    Route::get('/register', \App\Http\Livewire\Auth\Register::class) -> name('register');
 });
 
 Route::group(['middleware' => 'auth'], function(){
-    Route::get('/post/edit/{slug}', \App\Http\Livewire\Edit::class) -> name('edit');
-    Route::get('/post/delete/{id}',  \App\Http\Livewire\Delete::class) -> name('delete');
-    Route::get('/post/create', \App\Http\Livewire\PostCreate::class) -> name('create');
     Route::get('/logout', function(){
         Auth::logout();
         return redirect()->route('login');
     }) -> name('logout');
 });
 
-Route::get('/post/{slug}', \App\Http\Livewire\Post::class);
+Route::group(['middleware' => 'role:admin'], function(){
+    Route::get('/post/edit/{slug}', \App\Http\Livewire\Edit::class) -> name('edit');
+    Route::get('/post/delete/{id}',  \App\Http\Livewire\Delete::class) -> name('delete');
+    Route::get('/post/create', \App\Http\Livewire\PostCreate::class) -> name('create');
+});
+
+Route::get('/post/{slug}', \App\Http\Livewire\Post::class) -> name('post');

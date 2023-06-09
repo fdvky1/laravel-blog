@@ -26,7 +26,7 @@
                                     placeholder="type your password">
                             </div>
                             <button type="submit" class="mt-2 bg-gray-500 text-white hover:bg-gray-800 py-2 px-4 rounded-md">LOGIN</button>
-                            <!--<p class="text-sm text-gray-800 mt-4">dont have account? <a href="/register" class="underline font-bold">register</a></p>-->
+                            <p class="text-sm text-gray-800 mt-4">dont have account? <a href="/register" class="underline font-bold">register</a></p>
                         </form>
                     </div>
                 </div>
