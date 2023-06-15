@@ -2,9 +2,11 @@
     <div class="px-3 mx-auto 2xl:mx-8 my-8">
         <div>
             <h1 class="text-2xl font-bold text-gray-600 md:ml-16 lg:ml-24 xl:ml-0 mb-4">{{ $post->title }}</h1>
-            <article class="prose lg:prose-xl xl:prose-2xl mx-auto">
-                {!! $post->body !!}
-            </article>
+            <div class="prose lg:prose-xl xl:prose-2xl mx-auto">
+                <article class="not-prose unreset">
+                    {!! $post->body !!}
+                </article>
+            </div>
         </div>
     </div>
     <div class="w-full max-w-screen-md xl:w-1/4 2xl:w-1/3 xl:mt-24 mx-auto 2xl:mx-0">

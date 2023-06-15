@@ -5,7 +5,7 @@
         <h5 class="text-lg font-semibold">Latest Posts</h5>
         <div class="mt-4">
             <ul class="p-4 mb-4">
-            @foreach(\App\Models\Post::take(5)->get()->reverse() as $post)
+            @foreach(\App\Models\Post::get()->reverse()->take(5) as $post)
                 <li class="shadow-md mb-2 p-2 bg-slate-100 rounded-md border-gray-600">
                     <a href="/post/{{ $post->id }}">
                         <p class="text-2xl font-bold mb-2">{{ $post->title }}</p>

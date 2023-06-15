@@ -1,3 +1,36 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.container {
+    @apply mx-auto px-5;
+}
+
+.sticky {
+    @apply fixed bg-white shadow;
+}
+
+.toggler-icon {
+    @apply block bg-gray-700 relative duration-300;
+    height: 2px;
+    width: 30px;
+    margin: 6px 0;
+}
+.active>.toggler-icon:nth-child(1) {
+    @apply transform rotate-45;
+    top: 7px;
+}
+.active>.toggler-icon:nth-child(2) {
+    @apply opacity-0;
+}
+.active>.toggler-icon:nth-child(3) {
+    top: -8px;
+    transform: rotate(135deg);
+}
+.page-scroll {
+    @apply block px-5 py-2 uppercase text-gray-700 duration-300;
+}
+.page-scroll.active,
+.page-scroll:hover {
+    @apply text-blue-600;
+}

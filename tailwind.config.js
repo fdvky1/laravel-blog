@@ -7,7 +7,11 @@ module.exports = {
     "./resources/**/*.vue",
   ],
   theme: {
-    extend: {},
+    extend: {
+      inset:{
+        '100': '100%'
+      }
+    },
   },
   plugins: [
     require('@tailwindcss/typography'),
